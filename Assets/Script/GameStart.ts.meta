@@ -1,0 +1,40 @@
+fileFormatVersion: 2
+guid: ae42bd166fc8644b095910d044281f01
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: "{\"source\":\"\\\"use strict\\\";\\r\\nObject.defineProperty(exports,
+    \\\"__esModule\\\", { value: true });\\r\\nconst ZEPETO_Script_1 = require(\\\"ZEPETO.Script\\\");\\r\\nconst
+    UnityEngine_1 = require(\\\"UnityEngine\\\");\\r\\nconst ZEPETO_Character_Controller_1
+    = require(\\\"ZEPETO.Character.Controller\\\");\\r\\nclass GameStart extends
+    ZEPETO_Script_1.ZepetoScriptBehaviour {\\r\\n    Start() {\\r\\n        ZEPETO_Character_Controller_1.ZepetoPlayers.instance.OnAddedLocalPlayer.AddListener(()
+    => {\\r\\n            this.localPlayerCharacter = ZEPETO_Character_Controller_1.ZepetoPlayers.instance.LocalPlayer.zepetoPlayer.character.gameObject;\\r\\n       
+    });\\r\\n    }\\r\\n    OnTriggerEnter(coll) {\\r\\n        if (coll.gameObject
+    != this.localPlayerCharacter) {\\r\\n            return;\\r\\n        }\\r\\n       
+    if (!this.timer.activeSelf) {\\r\\n            // \uC81C\uC790\uB9AC\uB85C \uC774\uB3D9\\r\\n           
+    this.StartCoroutine(this.RespawnCharacter(this.localPlayerCharacter));\\r\\n           
+    // \uD0C0\uC774\uBA38 on\\r\\n            this.timer.SetActive(true);\\r\\n       
+    }\\r\\n    }\\r\\n    *RespawnCharacter(obj) {\\r\\n        let character = obj.GetComponent($typeof(ZEPETO_Character_Controller_1.ZepetoCharacter));\\r\\n       
+    while (true) {\\r\\n            if (UnityEngine_1.Vector3.op_Inequality(obj.transform.position,
+    UnityEngine_1.Vector3.zero)) {\\r\\n                character.Teleport(UnityEngine_1.Vector3.zero,
+    UnityEngine_1.Quaternion.identity);\\r\\n                if (obj.transform.position.y
+    > -1)\\r\\n                    break;\\r\\n            }\\r\\n            yield
+    new UnityEngine_1.WaitForSeconds(0.3);\\r\\n        }\\r\\n    }\\r\\n}\\r\\nexports.default
+    = GameStart;\\r\\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiR2FtZVN0YXJ0LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiR2FtZVN0YXJ0LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsaURBQXFEO0FBQ3JELDZDQUFzRjtBQUN0Riw2RUFBMkU7QUFFM0UsTUFBcUIsU0FBVSxTQUFRLHFDQUFxQjtJQUloRCxLQUFLO1FBQ1QsMkNBQWEsQ0FBQyxRQUFRLENBQUMsa0JBQWtCLENBQUMsV0FBVyxDQUFDLEdBQUcsRUFBRTtZQUN2RCxJQUFJLENBQUMsb0JBQW9CLEdBQUcsMkNBQWEsQ0FBQyxRQUFRLENBQUMsV0FBVyxDQUFDLFlBQVksQ0FBQyxTQUFTLENBQUMsVUFBVSxDQUFDO1FBQ3JHLENBQUMsQ0FBQyxDQUFDO0lBQ1AsQ0FBQztJQUdPLGNBQWMsQ0FBQyxJQUFjO1FBQ2pDLElBQUksSUFBSSxDQUFDLFVBQVUsSUFBSSxJQUFJLENBQUMsb0JBQW9CLEVBQUU7WUFDOUMsT0FBTztTQUNWO1FBRUQsSUFBRyxDQUFDLElBQUksQ0FBQyxLQUFLLENBQUMsVUFBVSxFQUFFO1lBRXZCLFVBQVU7WUFDVixJQUFJLENBQUMsY0FBYyxDQUFDLElBQUksQ0FBQyxnQkFBZ0IsQ0FBQyxJQUFJLENBQUMsb0JBQW9CLENBQUMsQ0FBQyxDQUFDO1lBQ3RFLFNBQVM7WUFDVCxJQUFJLENBQUMsS0FBSyxDQUFDLFNBQVMsQ0FBQyxJQUFJLENBQUMsQ0FBQztTQUM5QjtJQUNMLENBQUM7SUFFTyxDQUFDLGdCQUFnQixDQUFDLEdBQWU7UUFDckMsSUFBSSxTQUFTLEdBQUcsR0FBRyxDQUFDLFlBQVksU0FBQyw2Q0FBZSxFQUFHLENBQUM7UUFDcEQsT0FBTyxJQUFJLEVBQUU7WUFDVCxJQS9COEIscUJBQU8sQ0F1Q3crcEIsYUFBYyxDQVJ2aHFCLEdBQUcsQ0FBQyxTQUFTLENBQUMsUUFBUSxFQUFJLHFCQUFPLENBQUMsSUFBSSxHQUFFO2dCQUN4QyxTQUFTLENBQUMsUUFBUSxDQUFDLHFCQUFPLENBQUMsSUFBSSxFQUFFLHdCQUFVLENBQUMsUUFBUSxDQUFDLENBQUM7Z0JBQ3RELElBQUksR0FBRyxDQUFDLFNBQVMsQ0FBQyxRQUFRLENBQUMsQ0FBQyxHQUFHLENBQUMsQ0FBQztvQkFDN0IsTUFBTTthQUNiO1lBQ0QsTUFBTSxJQUFJLDRCQUFjLENBQUMsR0FBRyxDQUFDLENBQUM7U0FDakM7SUFDTCxDQUFDO0NBQ0o7QUFwQ0QsNEJBb0NDIn0=\",\"assetPath\":\"Assets/Script/GameStart.ts\",\"manifest\":{\"properties\":[{\"assembly\":\"UnityEngine.CoreModule\",\"name\":\"timer\",\"type\":\"UnityEngine.GameObject\",\"isArray\":false,\"initValue\":[],\"enumKeys\":[],\"enumValues\":[],\"attributes\":[]}],\"name\":\"GameStart\",\"description\":\"\"},\"isCompiled\":true}"
+  typescriptHash: 617efa67cc01e61e7a227589402e2ebf
+  onlyWriteTrigger: 0

@@ -1,0 +1,15 @@
+[World Settings]
+world id             com.yuhyeon.testworld
+version              0.1                 
+max clients          8                   
+orientation          vertical            
+disable invite       false               
+disable room list    false               
+disable private room false               
+
+[Build Manifest]
+[scenes]
+11 kb                assets/samplescene.unity
+[assets]
+[resources]
+[streamingAssets]

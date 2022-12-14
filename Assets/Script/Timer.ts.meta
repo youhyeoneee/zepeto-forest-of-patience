@@ -1,0 +1,37 @@
+fileFormatVersion: 2
+guid: 61c381dcdafbf447b92c6f632dc7804f
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: "{\"source\":\"\\\"use strict\\\";\\r\\nObject.defineProperty(exports,
+    \\\"__esModule\\\", { value: true });\\r\\nconst UnityEngine_1 = require(\\\"UnityEngine\\\");\\r\\nconst
+    UnityEngine_UI_1 = require(\\\"UnityEngine.UI\\\");\\r\\nconst ZEPETO_Script_1
+    = require(\\\"ZEPETO.Script\\\");\\r\\nclass Timer extends ZEPETO_Script_1.ZepetoScriptBehaviour
+    {\\r\\n    constructor() {\\r\\n        super(...arguments);\\r\\n        this.flag
+    = false;\\r\\n    }\\r\\n    Start() {\\r\\n        this.time = 0;\\r\\n    }\\r\\n   
+    Update() {\\r\\n        if (this.timer.activeSelf == true) {\\r\\n           
+    if (!this.flag) { // \uCC98\uC74C \uD55C\uBC88\uB9CC \uCD08\uAE30\uD654\uB418\uB3C4\uB85D\\r\\n               
+    this.time = 0;\\r\\n                this.flag = true;\\r\\n            }\\r\\n           
+    if (this.flag) {\\r\\n                this.time += UnityEngine_1.Time.deltaTime;\\r\\n               
+    this.timer.GetComponent($typeof(UnityEngine_UI_1.Text)).text = UnityEngine_1.Mathf.Round(this.time).toString();\\r\\n           
+    }\\r\\n        }\\r\\n    }\\r\\n    SendResult() {\\r\\n        var time = UnityEngine_1.Mathf.Round(this.time);\\r\\n       
+    // \uCD08\uAE30\uD654 \\r\\n        this.time = 0;\\r\\n        this.flag = false;\\r\\n       
+    this.timer.SetActive(false);\\r\\n        return time;\\r\\n    }\\r\\n}\\r\\nexports.default
+    = Timer;\\r\\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVGltZXIuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJUaW1lci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLDZDQUFzRDtBQUN0RCxtREFBc0M7QUFDdEMsaURBQXFEO0FBRXJELE1BQXFCLEtBQU0sU0FBUSxxQ0FBcUI7SUFBeEQ7O1FBSVksU0FBSSxHQUFHLEtBQUssQ0FBQztJQTZCekIsQ0FBQztJQTNCRyxLQUFLO1FBQ0QsSUFBSSxDQUFDLElBQUksR0FBRyxDQUFDLENBQUM7SUFDbEIsQ0FBQztJQUVELE1BQU07UUFDRixJQUFHLElBQUksQ0FBQyxLQUFLLENBQUMsVUFBVSxJQUFJLElBQUksRUFBQztZQUM3QixJQUFJLENBQUMsSUFBSSxDQUFDLElBQUksRUFBQyxFQUFFLGdCQUFnQjtnQkFDN0IsSUFBSSxDQUFDLElBQUksR0FBRyxDQUFDLENBQUM7Z0JBQ2QsSUFBSSxDQUFDLElBQUksR0FBRyxJQUFJLENBQUM7YUFDcEI7WUFFRCxJQUFHLElBQUksQ0FBQyxJQUFJLEVBQUM7Z0JBQ1QsSUFBSSxDQUFDLElBQUksSUFBSSxrQkFBSSxDQUFDLFNBQVMsQ0FBQztnQkFDNUIsSUFBSSxDQUFDLEtBQUssQ0FBQyxZQUFZLFNBQUMscUJBQUksR0FBSSxJQUFJLEdBQUcsbUJBQUssQ0FBQyxLQUFLLENBQUMsSUFBSSxDQUFDLElBQUksQ0FBQyxDQUFDLFFBQVEsRUFBRSxDQUFDO2FBQzVFO1NBQ0o7SUFDTCxDQUFDO0lBRU0sVUFBVTtRQUNiLElBQUksSUFBSSxHQUFHLG1CQUFLLENBQUMsS0FBSyxDQUFDLElBQUksQ0FBQyxJQUFJLENBQUMsQ0FBQztRQUNsQyxPQUFPO1FBQ1AsSUFBSSxDQUFDLElBQUksR0FBRyxDQUFDLENBQUM7UUFDZCxJQUFJLENBQUMsSUFBSSxHQUFHLEtBQUssQ0FBQztRQUNsQixJQUFJLENBQUMsS0FBSyxDQUFDLFNBQVMsQ0FBQyxLQUFLLENBQUMsQ0FBQztRQUU1QixPQUFPLElBQUksQ0FBQztJQUNoQixDQUFDO0NBQ0o7QUFqQ0Qsd0JBaUNDIn0=\",\"assetPath\":\"Assets/Script/Timer.ts\",\"manifest\":{\"properties\":[{\"assembly\":\"mscorlib\",\"name\":\"time\",\"type\":\"System.Single\",\"isArray\":false,\"initValue\":[],\"enumKeys\":[],\"enumValues\":[],\"attributes\":[]},{\"assembly\":\"UnityEngine.CoreModule\",\"name\":\"timer\",\"type\":\"UnityEngine.GameObject\",\"isArray\":false,\"initValue\":[],\"enumKeys\":[],\"enumValues\":[],\"attributes\":[]}],\"name\":\"Timer\",\"description\":\"\"},\"isCompiled\":true}"
+  typescriptHash: 59d81aafd2d61c9d6311763e15271beb
+  onlyWriteTrigger: 0

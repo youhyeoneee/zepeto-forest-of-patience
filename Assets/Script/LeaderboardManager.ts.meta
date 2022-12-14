@@ -1,0 +1,53 @@
+fileFormatVersion: 2
+guid: c4920bcbe29f24689920f6b62a7eb9a2
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst
+    ZEPETO_Script_Leaderboard_1 = require(\"ZEPETO.Script.Leaderboard\");\r\nconst
+    UnityEngine_1 = require(\"UnityEngine\");\r\nconst Group_1 = require(\"./Group\");\r\nclass
+    LeaderboardManager extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    constructor()
+    {\r\n        super(...arguments);\r\n        this.leaderboardId = \"81cc47e8-b548-43a6-851c-dc56fb968466\";\r\n       
+    this.startRank = 1;\r\n        this.endRank = 10000; // Ranking information can
+    be processed up to 10,000 cases at a time\r\n    }\r\n    Awake() {\r\n       
+    this.LoadLeaderboard();\r\n        this.UnLoadLeaderboard();\r\n        this.gameObject.SetActive(false);\r\n   
+    }\r\n    OnEnable() {\r\n        this.LoadLeaderboard();\r\n    }\r\n    OnDisable()
+    {\r\n        this.UnLoadLeaderboard();\r\n    }\r\n    SendScore(score) {\r\n       
+    this.myBestScore = (score < this.myBestScore || this.myBestScore == 0) ? score
+    : this.myBestScore;\r\n        ZEPETO_Script_Leaderboard_1.LeaderboardAPI.SetScore(this.leaderboardId,
+    score, (result) => { console.log(`result.isSuccess: ${result.isSuccess}`); },
+    (error) => { console.error(error); });\r\n        return this.myBestScore;\r\n   
+    }\r\n    LoadLeaderboard() {\r\n        ZEPETO_Script_Leaderboard_1.LeaderboardAPI.GetRangeRank(this.leaderboardId,
+    this.startRank, this.endRank, this.resetRule, false, (result) => { this.OnResult(result);
+    }, (error) => { console.error(error); });\r\n    }\r\n    OnResult(result) {\r\n       
+    if (result.rankInfo.myRank) {\r\n            // Set Group - My Score\r\n           
+    var myRank = result.rankInfo.myRank;\r\n            const _group = this.myScoreGroup.GetComponent($typeof(Group_1.default));\r\n           
+    this.myBestScore = myRank.score;\r\n            _group.SetGroup(myRank.member,
+    myRank.name, myRank.rank, myRank.score);\r\n        }\r\n        if (result.rankInfo.rankList)
+    {\r\n            var end = (result.rankInfo.rankList.length < this.endRank) ?
+    result.rankInfo.rankList.length : this.endRank;\r\n            for (let i = 0;
+    i < end; ++i) {\r\n                var rank = result.rankInfo.rankList[i];\r\n               
+    // Set Groups - All Rankings\r\n                var newGroup = UnityEngine_1.GameObject.Instantiate(this.groupPrefab,
+    this.contentsParent.transform);\r\n                const _group = newGroup.GetComponent($typeof(Group_1.default));\r\n               
+    _group.SetGroup(rank.member, rank.name, rank.rank, rank.score);\r\n           
+    }\r\n        }\r\n    }\r\n    UnLoadLeaderboard() {\r\n        this.contentsParent.GetComponentsInChildren($typeof(Group_1.default)).forEach((child)
+    => {\r\n            UnityEngine_1.GameObject.Destroy(child.gameObject);\r\n       
+    });\r\n    }\r\n}\r\nexports.default = LeaderboardManager;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiTGVhZGVyYm9hcmRNYW5hZ2VyLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiTGVhZGVyYm9hcmRNYW5hZ2VyLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsaURBQXFEO0FBQ3JELHlFQUE0RjtBQUM1Riw2Q0FBb0Q7QUFDcEQsbUNBQTJCO0FBRTNCLE1BQXFCLGtCQUFtQixTQUFRLHFDQUFxQjtJQUFyRTs7UUFFVyxrQkFBYSxHQUFXLHNDQUFzQyxDQUFBO1FBRTdELGNBQVMsR0FBVyxDQUFDLENBQUM7UUFDdEIsWUFBTyxHQUFXLEtBQUssQ0FBQyxDQUFDLG9FQUFvRTtJQWtFekcsQ0FBQztJQTNERyxLQUFLO1FBQ0QsSUFBSSxDQUFDLGVBQWUsRUFBRSxDQUFDO1FBQ3ZCLElBQUksQ0FBQyxpQkFBaUIsRUFBRSxDQUFDO1FBQ3pCLElBQUksQ0FBQyxVQUFVLENBQUMsU0FBUyxDQUFDLEtBQUssQ0FBQyxDQUFDO0lBQ3JDLENBQUM7SUFFRCxRQUFRO1FBQ0osSUFBSSxDQUFDLGVBQWUsRUFBRSxDQUFDO0lBQzNCLENBQUM7SUFFRCxTQUFTO1FBQ0wsSUFBSSxDQUFDLGlCQUFpQixFQUFFLENBQUM7SUFDN0IsQ0FBQztJQUVNLFNBQVMsQ0FBQyxLQUFhO1FBQzFCLElBQUksQ0FBQyxXQUFXLEdBQUcsQ0FBQyxLQUFLLEdBQUcsSUFBSSxDQUFDLFdBQVcsSUFBSSxJQUFJLENBQUMsV0FBVyxJQUFJLENBQUMsQ0FBQyxDQUFBLENBQUMsQ0FBQyxLQUFLLENBQUMsQ0FBQyxDQUFDLElBQUksQ0FBQyxXQUFXLENBQUM7UUFDakcsMENBQWMsQ0FBQyxRQUFRLENBQUMsSUFBSSxDQUFDLGFBQWEsRUFBRSxLQUFLLEVBQzdDLENBQUMsTUFBTSxFQUFDLEVBQUUsR0FBQyxPQUFPLENBQUMsR0FBRyxDQUFDLHFCQUFxQixNQUFNLENBQUMsU0FBUyxFQUFFLENBQUMsQ0FBQyxDQUFBLENBQUMsRUFDakUsQ0FBQyxLQUFLLEVBQUMsRUFBRSxHQUFD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","assetPath":"Assets/Script/LeaderboardManager.ts","manifest":{"properties":[{"assembly":"mscorlib","name":"leaderboardId","type":"System.String","isArray":false,"initValue":["81cc47e8-b548-43a6-851c-dc56fb968466"],"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"ZEPETO.Script.Leaderboard","name":"resetRule","type":"ZEPETO.Script.Leaderboard.ResetRule","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"UnityEngine.CoreModule","name":"myScoreGroup","type":"UnityEngine.GameObject","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[{"name":"SerializeField","args":[]}]},{"assembly":"UnityEngine.CoreModule","name":"contentsParent","type":"UnityEngine.GameObject","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[{"name":"SerializeField","args":[]}]},{"assembly":"UnityEngine.CoreModule","name":"groupPrefab","type":"UnityEngine.GameObject","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[{"name":"SerializeField","args":[]}]}],"name":"LeaderboardManager","description":""},"isCompiled":true}'
+  typescriptHash: fb7a84c2125c710e2db9b01aeb16ce3d
+  onlyWriteTrigger: 0

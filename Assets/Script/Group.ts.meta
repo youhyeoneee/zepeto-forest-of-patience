@@ -1,0 +1,35 @@
+fileFormatVersion: 2
+guid: 0a4d2a9bd11e14cb7ab0687a999a5d0d
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst
+    UnityEngine_1 = require(\"UnityEngine\");\r\nconst ZEPETO_World_1 = require(\"ZEPETO.World\");\r\nclass
+    Group extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    SetGroup(userId,
+    name, rank, score) {\r\n        // Set player''s Image\r\n        ZEPETO_World_1.ZepetoWorldHelper.GetProfileTexture(userId,
+    (texture) => {\r\n            this.playerImage.sprite = this.GetSprite(texture);\r\n       
+    }, (error) => {\r\n            console.log(error);\r\n        });\r\n       
+    // Set player''s name, rank, and score\r\n        this.playerNameText.text =
+    name;\r\n        this.playerRankText.text = rank.toString();\r\n        this.playerScoreText.text
+    = score.toString();\r\n    }\r\n    GetSprite(texture) {\r\n        let rect
+    = new UnityEngine_1.Rect(0, 0, texture.width, texture.height);\r\n        return
+    UnityEngine_1.Sprite.Create(texture, rect, new UnityEngine_1.Vector2(0.5, 0.5));\r\n   
+    }\r\n}\r\nexports.default = Group;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiR3JvdXAuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJHcm91cC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLGlEQUFxRDtBQUVyRCw2Q0FBbUY7QUFDbkYsK0NBQXVEO0FBRXZELE1BQXFCLEtBQU0sU0FBUSxxQ0FBcUI7SUFPN0MsUUFBUSxDQUFDLE1BQWMsRUFBRSxJQUFZLEVBQUUsSUFBWSxFQUFFLEtBQWE7UUFDckUscUJBQXFCO1FBQ3JCLGdDQUFpQixDQUFDLGlCQUFpQixDQUFDLE1BQU0sRUFBQyxDQUFDLE9BQWUsRUFBQyxFQUFFO1lBQzFELElBQUksQ0FBQyxXQUFXLENBQUMsTUFBTSxHQUFHLElBQUksQ0FBQyxTQUFTLENBQUMsT0FBTyxDQUFDLENBQUM7UUFDdEQsQ0FBQyxFQUFDLENBQUMsS0FBSyxFQUFDLEVBQUU7WUFDUCxPQUFPLENBQUMsR0FBRyxDQUFDLEtBQUssQ0FBQyxDQUFDO1FBQ3ZCLENBQUMsQ0FBQyxDQUFDO1FBRUgscUNBQXFDO1FBQ3JDLElBQUksQ0FBQyxjQUFjLENBQUMsSUFBSSxHQUFHLElBQUksQ0FBQztRQUNoQyxJQUFJLENBQUMsY0FBYyxDQUFDLElBQUksR0FBRyxJQUFJLENBQUMsUUFBUSxFQUFFLENBQUM7UUFDM0MsSUFBSSxDQUFDLGVBQWUsQ0FBQyxJQUFJLEdBQUcsS0FBSyxDQUFDLFFBQVEsRUFBRSxDQUFDO0lBQ2pELENBQUM7SUFFRCxTQUFTLENBQUMsT0FBZTtRQUNyQixJQUFJLElBQUksR0FBUSxJQUFJLGtCQUFJLENBQUMsQ0FBQyxFQUFFLENBQUMsRUFBRSxPQUFPLENBQUMsS0FBSyxFQUFFLE9BQU8sQ0FBQyxNQUFNLENBQUMsQ0FBQztRQUM5RCxPQUFPLG9CQUFNLENBQUMsTUFBTSxDQUFDLE9BQW9CLEVBQUUsSUFBSSxFQUFFLElBQUkscUJBQU8sQ0FBQyxHQUFHLEVBQUUsR0FBRyxDQUFDLENBQUMsQ0FBQztJQUM1RSxDQUFDO0NBRUo7QUExQkQsd0JBMEJDIn0=","assetPath":"Assets/Script/Group.ts","manifest":{"properties":[{"assembly":"UnityEngine.UI","name":"playerImage","type":"UnityEngine.UI.Image","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[{"name":"SerializeField","args":[]}]},{"assembly":"UnityEngine.UI","name":"playerRankText","type":"UnityEngine.UI.Text","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[{"name":"SerializeField","args":[]}]},{"assembly":"UnityEngine.UI","name":"playerNameText","type":"UnityEngine.UI.Text","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[{"name":"SerializeField","args":[]}]},{"assembly":"UnityEngine.UI","name":"playerScoreText","type":"UnityEngine.UI.Text","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[{"name":"SerializeField","args":[]}]}],"name":"Group","description":""},"isCompiled":true}'
+  typescriptHash: f0be602d0888dc09b13093e266a342d5
+  onlyWriteTrigger: 0

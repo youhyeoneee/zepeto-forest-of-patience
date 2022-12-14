@@ -1,0 +1,44 @@
+fileFormatVersion: 2
+guid: 38ba76f17cb604644aff16acaed70a41
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: "{\"source\":\"\\\"use strict\\\";\\r\\nObject.defineProperty(exports,
+    \\\"__esModule\\\", { value: true });\\r\\nconst ZEPETO_Script_1 = require(\\\"ZEPETO.Script\\\");\\r\\nconst
+    ZEPETO_Character_Controller_1 = require(\\\"ZEPETO.Character.Controller\\\");\\r\\nconst
+    UnityEngine_1 = require(\\\"UnityEngine\\\");\\r\\nconst Timer_1 = require(\\\"./Timer\\\");\\r\\nconst
+    UIManager_1 = require(\\\"./UIManager\\\");\\r\\nconst LeaderboardManager_1 =
+    require(\\\"./LeaderboardManager\\\");\\r\\nclass GameEnd extends ZEPETO_Script_1.ZepetoScriptBehaviour
+    {\\r\\n    Start() {\\r\\n        ZEPETO_Character_Controller_1.ZepetoPlayers.instance.OnAddedLocalPlayer.AddListener(()
+    => {\\r\\n            this.localPlayerCharacter = ZEPETO_Character_Controller_1.ZepetoPlayers.instance.LocalPlayer.zepetoPlayer.character.gameObject;\\r\\n       
+    });\\r\\n    }\\r\\n    OnTriggerEnter(coll) {\\r\\n        if (coll.gameObject
+    != this.localPlayerCharacter) {\\r\\n            return;\\r\\n        }\\r\\n       
+    // \uB3C4\uCC29\uD558\uBA74 \uACB0\uACFC \uC804\uC1A1 \uBC0F \uACB0\uACFC\uCC3D
+    \uB744\uC6B0\uAE30\\r\\n        var score = this.timer.GetComponent($typeof(Timer_1.default)).SendResult();\\r\\n       
+    var bestScore = this.leaderboardManager.transform.Find(\\\"LeaderboardPanel\\\").GetComponent($typeof(LeaderboardManager_1.default)).SendScore(score);\\r\\n       
+    this.uiManager.GetComponent($typeof(UIManager_1.default)).LoadResult(score, bestScore);\\r\\n       
+    this.OkButton.onClick.AddListener(() => this.StartCoroutine(this.RespawnCharacter(this.localPlayerCharacter)));\\r\\n   
+    }\\r\\n    *RespawnCharacter(obj) {\\r\\n        let character = obj.GetComponent($typeof(ZEPETO_Character_Controller_1.ZepetoCharacter));\\r\\n       
+    while (true) {\\r\\n            if (UnityEngine_1.Vector3.op_Inequality(obj.transform.position,
+    UnityEngine_1.Vector3.zero)) {\\r\\n                character.Teleport(UnityEngine_1.Vector3.zero,
+    UnityEngine_1.Quaternion.identity);\\r\\n                if (obj.transform.position.y
+    > -1)\\r\\n                    break;\\r\\n            }\\r\\n            yield
+    new UnityEngine_1.WaitForSeconds(0.3);\\r\\n        }\\r\\n    }\\r\\n}\\r\\nexports.default
+    = GameEnd;\\r\\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiR2FtZUVuZC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIkdhbWVFbmQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSxpREFBcUQ7QUFDckQsNkVBQTJFO0FBQzNFLDZDQUFzRjtBQUV0RixtQ0FBNEI7QUFDNUIsMkNBQW9DO0FBQ3BDLDZEQUFzRDtBQUV0RCxNQUFxQixPQUFRLFNBQVEscUNBQXFCO0lBUzlDLEtBQUs7UUFDVCwyQ0FBYSxDQUFDLFFBQVEsQ0FBQyxrQkFBa0IsQ0FBQyxXQUFXLENBQUMsR0FBRyxFQUFFO1lBQ3ZELElBQUksQ0FBQyxvQkFBb0IsR0FBRywyQ0FBYSxDQUFDLFFBQVEsQ0FBQyxXQUFXLENBQUMsWUFBWSxDQUFDLFNBQVMsQ0FBQyxVQUFVLENBQUM7UUFDckcsQ0FBQyxDQUFDLENBQUM7SUFDUCxDQUFDO0lBRU8sY0FBYyxDQUFDLElBQWM7UUFDakMsSUFBSSxJQUFJLENBQUMsVUFBVSxJQUFJLElBQUksQ0FBQyxvQkFBb0IsRUFBRTtZQUM5QyxPQUFPO1NBQ1Y7UUFFRCx1QkFBdUI7UUFDdkIsSUFBSSxLQUFLLEdBQUcsSUFBSSxDQUFDLEtBQUssQ0FBQyxZQUFZLFNBQUMsZUFBSyxHQUFJLFVBQVUsRUFBRSxDQUFDO1FBQzFELElBQUksU0FBUyxHQUFHLElBQUksQ0FBQyxrQkFBa0IsQ0FBQyxTQUFTLENBQUMsSUFBSSxDQUFDLGtCQUFrQixDQUFDLENBQUMsWUFBWSxTQUFDLDRCQUFrQixHQUFJLFNBQVMsQ0FBQyxLQUFLLENBQUMsQ0FBQztRQUMvSCxJQUFJLENBQUMsU0FBUyxDQUFDLFlBQVksU0FBQyxtQkFBUyxHQUFJLFVBQVUsQ0FBQyxLQUFLLEVBQUUsU0FBUyxDQUFDLENBQUM7UUFFdEUsSUFBSSxDQUFDLFFBQVEsQ0FBQyxPQUFPLENBQUMsV0FBVyxDQUFDLEdBQUcsRUFBRSxDQUFDLElBQUksQ0FBQyxjQUFjLENBQUMsSUFBSSxDQUFDLGdCQUFnQixDQUFDLElBQUksQ0FBQyxvQkFBb0IsQ0FBQyxDQUFDLENBQUMsQ0FBQTtJQUVsSCxDQUFDO0lBRU8sQ0FBQyxnQkFBZ0IsQ0FBQyxHQUFlO1FBQ3JDLElBQUksU0FBUyxHQUFHLEdBQUcsQ0FBQyxZQUFZLFNBQUMsNkNBQWUsRUFBRyxDQUFDO1FBQ3BELE9BQU8sSUFBSSxFQUFFO1lBQ1QsSUF0QzhCLHFCQUFPLENBOEN1OG9CLGFBQWMsQ0FSdC9vQixHQUFHLENBQUMsU0FBUyxDQUFDLFFBQVEsRUFBSSxxQkFBTyxDQUFDLElBQUksR0FBRTtnQkFDeEMsU0FBUyxDQUFDLFFBQVEsQ0FBQyxxQkFBTyxDQUFDLElBQUksRUFBRSx3QkFBVSxDQUFDLFFBQVEsQ0FBQyxDQUFDO2dCQUN0RCxJQUFJLEdBQUcsQ0FBQyxTQUFTLENBQUMsUUFBUSxDQUFDLENBQUMsR0FBRyxDQUFDLENBQUM7b0JBQzdCLE1BQU07YUFDYjtZQUNELE1BQU0sSUFBSSw0QkFBYyxDQUFDLEdBQUcsQ0FBQyxDQUFDO1NBQ2pDO0lBQ0wsQ0FBQztDQUNKO0FBeENELDBCQXdDQyJ9\",\"assetPath\":\"Assets/Script/GameEnd.ts\",\"manifest\":{\"properties\":[{\"assembly\":\"UnityEngine.UI\",\"name\":\"OkButton\",\"type\":\"UnityEngine.UI.Button\",\"isArray\":false,\"initValue\":[],\"enumKeys\":[],\"enumValues\":[],\"attributes\":[{\"name\":\"SerializeField\",\"args\":[]}]},{\"assembly\":\"UnityEngine.CoreModule\",\"name\":\"timer\",\"type\":\"UnityEngine.GameObject\",\"isArray\":false,\"initValue\":[],\"enumKeys\":[],\"enumValues\":[],\"attributes\":[{\"name\":\"SerializeField\",\"args\":[]}]},{\"assembly\":\"UnityEngine.CoreModule\",\"name\":\"uiManager\",\"type\":\"UnityEngine.GameObject\",\"isArray\":false,\"initValue\":[],\"enumKeys\":[],\"enumValues\":[],\"attributes\":[{\"name\":\"SerializeField\",\"args\":[]}]},{\"assembly\":\"UnityEngine.CoreModule\",\"name\":\"leaderboardManager\",\"type\":\"UnityEngine.GameObject\",\"isArray\":false,\"initValue\":[],\"enumKeys\":[],\"enumValues\":[],\"attributes\":[{\"name\":\"SerializeField\",\"args\":[]}]}],\"name\":\"GameEnd\",\"description\":\"\"},\"isCompiled\":true}"
+  typescriptHash: e80babe6ac8fe4a07caffc2c9c8cc10c
+  onlyWriteTrigger: 0
