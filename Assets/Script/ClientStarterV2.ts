@@ -12,9 +12,18 @@ export default class ClientStarterV2 extends ZepetoScriptBehaviour {
 
     private room: Room;
     private currentPlayers: Map<string, Player> = new Map<string, Player>();
-
-    private zepetoPlayer: ZepetoPlayer;
     private player: Player;
+    private zepetoPlayer: ZepetoPlayer;
+    
+    public static instance: ClientStarterV2;
+    /* Singleton */
+    private Awake() {
+        if (ClientStarterV2.instance == null) {
+            ClientStarterV2.instance = this;
+        } else {
+            return;
+        }
+    }
     private Start() {
 
         this.multiplay.RoomCreated += (room: Room) => {
@@ -98,13 +107,14 @@ export default class ClientStarterV2 extends ZepetoScriptBehaviour {
         spawnInfo.rotation = UnityEngine.Quaternion.Euler(rotation);
 
         const isLocal = this.room.SessionId === player.sessionId;
-        if(isLocal){
-            this.player = player; 
-        }
-        
         ZepetoPlayers.instance.CreatePlayerWithUserId(sessionId, player.zepetoUserId, spawnInfo, isLocal);
-        
-        
+        this.StartCoroutine(this.CharacterInit(sessionId));
+        this.StartCoroutine(this.CharacterInit(sessionId));
+    }
+
+    private* CharacterInit(sessionId: string) {
+        yield new UnityEngine.WaitUntil(() => ZepetoPlayers.instance.HasPlayer(sessionId));
+        ZepetoPlayers.instance.GetPlayer(sessionId).character.transform.name = sessionId;
     }
 
     private OnLeavePlayer(sessionId: string, player: Player) {
@@ -177,14 +187,4 @@ export default class ClientStarterV2 extends ZepetoScriptBehaviour {
         );
     }
     
-    // public SendScore(score: number){
-    //     if (this.player.score.best > score)
-    //         this.room.Send("onChangedScore", score);
-    //
-    //     // add server message listener
-    //     this.room.AddMessageHandler("onChangedScore",(message)=>{
-    //         // print server message
-    //         console.log(message);
-    //     });
-    // }
 }

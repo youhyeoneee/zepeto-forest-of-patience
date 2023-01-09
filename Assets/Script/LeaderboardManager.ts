@@ -2,33 +2,48 @@ import { ZepetoScriptBehaviour } from 'ZEPETO.Script'
 import { GetRangeRankResponse, LeaderboardAPI, ResetRule } from "ZEPETO.Script.Leaderboard";
 import { GameObject, Transform } from "UnityEngine";
 import Group from './Group'
+import {Room} from "ZEPETO.Multiplay";
+import ClientStarterV2 from './ClientStarterV2';
 
 export default class LeaderboardManager extends ZepetoScriptBehaviour {
 
-    public leaderboardId: string = "81cc47e8-b548-43a6-851c-dc56fb968466"
+    public leaderboardId: string;
     public resetRule: ResetRule;
     private startRank: number = 1;
     private endRank: number = 10000; // Ranking information can be processed up to 10,000 cases at a time
     private myBestScore: number;
-    
+    private room : Room;
+
     @SerializeField() private myScoreGroup: GameObject;
     @SerializeField() private contentsParent: GameObject;
     @SerializeField() private groupPrefab: GameObject;
 
     Awake(){
         this.LoadLeaderboard();
-        this.UnLoadLeaderboard();
         this.gameObject.SetActive(false);
     }
 
+    Start(){
+        ClientStarterV2.instance.multiplay.RoomJoined += (room: Room) => {
+            this.room = room;
+            this.room.AddMessageHandler("ChangedScore", (message:number) => {
+                this.StartCoroutine(this.ChangedScore(message));
+            });
+        };
+    }
     OnEnable(){
         this.LoadLeaderboard();
     }
 
     OnDisable(){
+        console.log(">> disable")
         this.UnLoadLeaderboard();
     }
  
+    *ChangedScore(score: number){
+        
+    }
+    
     public SendScore(score: number){
         this.myBestScore = (score < this.myBestScore || this.myBestScore == 0)? score : this.myBestScore;
         LeaderboardAPI.SetScore(this.leaderboardId, score, 

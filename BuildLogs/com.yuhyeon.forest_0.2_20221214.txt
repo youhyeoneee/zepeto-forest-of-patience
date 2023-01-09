@@ -1,0 +1,117 @@
+[World Settings]
+world id             com.yuhyeon.forest  
+version              0.2                 
+max clients          8                   
+orientation          horizontal          
+disable invite       false               
+disable room list    false               
+disable private room false               
+
+[Build Manifest]
+[scenes]
+330 kb               assets/scenes/forestofpatience .unity
+[assets]
+39 kb                packages/zepeto.buildit.themepark/data/plant b2/data/ap_plant_b002.prefab
+4 kb                 packages/zepeto.buildit.city/road sign 1.prefab
+13 kb                packages/zepeto.character.controller/runtime/_resources/images/touchpad_handle_base.png
+560 kb               packages/zepeto.character.controller/runtime/_resources/animations/base/idle.anim
+200 kb               assets/images/materials/sky5x/sky5x_textures/skyx55+y.png
+2 kb                 packages/zepeto.character.controller/runtime/_resources/animations/ui/controller/touchpad_handle_off.anim
+3 kb                 packages/zepeto.buildit.themepark/plant a1.prefab
+734 kb               packages/zepeto.buildit.common/common/world_ap_commons/data/texture/ap_texturemap_001.png
+35 kb                packages/zepeto.character.controller/runtime/_resources/inputactions/zepetoinputcontrol.inputactions
+21 kb                assets/images/game gui vol1/lazyday/png/restart.png
+2 kb                 assets/images/materials/start-line.mat
+59 kb                packages/zepeto.buildit.common/common/world_ap_commons/data/texture/ap_tile_003.png
+600 kb               packages/zepeto.character.controller/runtime/_resources/animations/base/v2/landing_slight.anim
+150 kb               assets/images/materials/sky5x/sky5x_textures/skyx55+z.png
+62 kb                packages/zepeto.character.controller/runtime/_resources/animations/base/action1.anim
+28 kb                assets/images/start-line.jpg
+257 kb               assets/images/materials/sky5x/sky5x_textures/skyx55-z.png
+1 kb                 packages/zepeto.character.controller/runtime/_resources/prefabs/shadow/fxt_blobshadow.png
+2 kb                 packages/zepeto.buildit.common/common/world_ap_commons/data/ap_tile_003.mat
+254 kb               packages/zepeto.buildit.themepark/data/tree 2/data/ap_tree_b.prefab
+4 kb                 packages/zepeto.buildit.themepark/tree 2.prefab
+295 kb               packages/zepeto.character.controller/runtime/_resources/animatorcontroller/zepetoanimatorv2.controller
+48 kb                packages/zepeto.buildit.themepark/data/plant b4/data/ap_plant_b004.prefab
+1 mb                 packages/zepeto.character.controller/runtime/_resources/animations/gesture/4_ok.anim
+3 kb                 packages/zepeto.character.controller/runtime/_resources/animations/ui/controller/touchpad_handle_ziggle.anim
+1 mb                 packages/zepeto.character.controller/runtime/_resources/animations/base/walk.anim
+374 kb               packages/zepeto.character.controller/runtime/_resources/animations/base/v2/move_run_fast.anim
+828 kb               packages/zepeto.character.controller/runtime/_resources/animations/base/v2/move_turn.anim
+2 kb                 packages/zepeto.character.controller/runtime/_resources/animations/ui/controller/touchpad_handle_on.anim
+2 kb                 assets/images/materials/sand.mat
+1 mb                 packages/zepeto.character.controller/runtime/_resources/animations/base/v2/landing_deep.anim
+71 kb                packages/zepeto.buildit.themepark/data/ferris wheel floor/data/ap_ferriswheelfloor.prefab
+26 kb                packages/zepeto.buildit.classroom/data/bench/data/cr_bench_001.prefab
+32 kb                packages/zepeto.buildit.themepark/data/plant c1/data/ap_plant_c001.prefab
+10 kb                packages/zepeto.buildit.city/data/neon sign 6/data/sa_neonsign_007.prefab
+445 kb               packages/zepeto.character.controller/runtime/_resources/animations/base/v2/move_run.anim
+4 kb                 packages/zepeto.buildit.classroom/set square.prefab
+1 mb                 packages/zepeto.character.controller/runtime/_resources/animations/base/jump_idle.anim
+2 kb                 packages/zepeto.buildit.common/common/world_commons/data/colortexture_001.mat
+1 mb                 packages/zepeto.character.controller/runtime/_resources/animations/base/jump_move.anim
+239 kb               packages/zepeto.buildit.themepark/data/tree 1/data/ap_tree_a.prefab
+27 kb                packages/zepeto.character.controller/runtime/_resources/prefabs/uicontroller_touchpad_horizontal.prefab
+21 kb                assets/images/game gui vol1/lazyday/png/gamecenter.png
+2 kb                 packages/zepeto.character.controller/runtime/_resources/animations/ui/controller/touchpad_handle_origin_off.anim
+7 kb                 packages/zepeto.character.controller/runtime/_resources/animatorcontroller/uicontrollertouchpadhandleorigin.controller
+574 kb               packages/zepeto.character.controller/runtime/_resources/animations/base/v2/landing_roll.anim
+1 kb                 assets/images/shape_gesture_title.png
+330 kb               packages/zepeto.character.controller/runtime/_resources/animations/base/v2/falling.anim
+62 kb                packages/zepeto.character.controller/runtime/_resources/animations/base/action2.anim
+3 kb                 packages/zepeto.buildit.themepark/plant b4.prefab
+197 kb               packages/zepeto.buildit.themepark/data/tree 3/data/ap_tree_c.prefab
+27 kb                packages/zepeto.character.controller/runtime/_resources/prefabs/uicontroller_touchpad_vertical.prefab
+29 kb                packages/zepeto.buildit.city/data/road sign 1/data/sa_raodsign_001.prefab
+5 kb                 packages/zepeto.character.controller/runtime/_resources/images/touchpad_handle_icon.png
+4 kb                 packages/zepeto.buildit.classroom/bench.prefab
+451 kb               packages/zepeto.character.controller/runtime/_resources/animations/base/v2/stamp.anim
+11 kb                assets/prefabs/group.prefab
+618 kb               packages/zepeto.character.controller/runtime/_resources/animations/base/v2/jump_idle.anim
+5 kb                 packages/zepeto.character.controller/runtime/_resources/images/touchpad_jump_icon.png
+3 kb                 packages/zepeto.buildit.themepark/plant b2.prefab
+1 kb                 packages/com.unity.inputsystem/inputsystem/editor/icons/inputsystemuiinputmodule@64.png
+7 kb                 packages/zepeto.character.controller/runtime/_resources/animatorcontroller/uicontrollertouchpadhandle.controller
+142 kb               packages/zepeto.buildit.themepark/data/plant a1/data/ap_plant_a001.prefab
+138 kb               assets/images/materials/sky5x/sky5x_textures/skyx55+x.png
+4 kb                 packages/zepeto.buildit.city/flowerpot 2.prefab
+451 kb               packages/zepeto.character.controller/runtime/_resources/animations/base/v2/jump_dash.anim
+3 kb                 packages/zepeto.buildit.themepark/plant c1.prefab
+12 kb                assets/images/materials/sky5x/sky5x_textures/skyx55-y.png
+1 kb                 packages/zepeto.character.controller/runtime/_resources/camera/zepetocamera.prefab
+21 kb                assets/images/game gui vol1/lazyday/png/cancel.png
+940 kb               packages/zepeto.character.controller/runtime/_resources/animations/base/run.anim
+489 kb               packages/zepeto.character.controller/runtime/_resources/animations/base/v2/move_walk_fast.anim
+3 kb                 packages/zepeto.character.controller/runtime/_resources/prefabs/shadow/charactershadow.prefab
+12 kb                packages/zepeto.character.controller/runtime/_resources/images/touchpad_jump_base.png
+5 kb                 packages/zepeto.buildit.common/common/cooltime_commons/data/builditstandard.shader
+27 kb                packages/zepeto.buildit.common/common/world_commons/data/texture/colortexture_001.png
+442 kb               packages/zepeto.character.controller/runtime/_resources/animations/base/v2/jump_move.anim
+4 kb                 packages/zepeto.buildit.city/neon sign 6.prefab
+62 kb                packages/zepeto.character.controller/runtime/_resources/animations/base/gesture.anim
+1 mb                 packages/zepeto.character.controller/runtime/_resources/animations/base/v2/move_walk.anim
+4 kb                 packages/zepeto.buildit.themepark/tree 1.prefab
+18 kb                packages/zepeto.character.controller/runtime/_resources/animatorcontroller/zepetoanimator.controller
+2 kb                 packages/zepeto.character.controller/runtime/_resources/prefabs/shadow/fxt_blobshadow.mat
+40 kb                packages/zepeto.buildit.classroom/data/set square/data/cr_truller.prefab
+14 kb                assets/images/shape_interface_background.png
+2 kb                 packages/zepeto.character.controller/runtime/_resources/prefabs/eventsystem.prefab
+1014 kb              packages/zepeto.character.controller/runtime/_resources/animations/base/v2/idle.anim
+1 mb                 packages/zepeto.character.controller/runtime/_resources/animations/base/fall_end.anim
+2 kb                 packages/zepeto.buildit.common/common/world_ap_commons/data/ap_texturemap_001.mat
+144 kb               packages/zepeto.buildit.city/data/flowerpot 2/data/sa_planter_02.prefab
+4 kb                 packages/zepeto.buildit.themepark/tree 3.prefab
+2 kb                 packages/zepeto.character.controller/runtime/_resources/animations/ui/controller/touchpad_handle_origin_on.anim
+3 kb                 packages/zepeto.buildit.themepark/plant a2.prefab
+464 kb               packages/zepeto.character.controller/runtime/_resources/animations/base/v2/jump_double.anim
+117 kb               packages/zepeto.buildit.themepark/data/plant a2/data/ap_plant_a002.prefab
+7 kb                 packages/zepeto.buildit.themepark/ferris wheel floor.prefab
+428 kb               packages/zepeto.character.controller/runtime/_resources/animations/base/hand_idle_01.anim
+31 kb                packages/com.unity.inputsystem/inputsystem/plugins/playerinput/defaultinputactions.inputactions
+4 kb                 assets/images/materials/sky5x/sky5x_skyboxes/sky5x5.mat
+183 kb               assets/images/materials/sky5x/sky5x_textures/skyx55-x.png
+3 kb                 packages/zepeto.character.controller/runtime/_resources/animations/ui/controller/touchpad_handle_origin_ziggle.anim
+[resources]
+0 b                  assets/resources    
+[streamingAssets]

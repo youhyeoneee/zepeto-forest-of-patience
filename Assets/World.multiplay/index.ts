@@ -37,6 +37,10 @@ export default class extends Sandbox {
             player.state = message.state;
             player.subState = message.subState; // Character Controller V2
         });
+
+        this.onMessage("ReSpawn", (client) => {
+            this.broadcast("ReSpawn", client.sessionId);
+        });
         
     }
     
